@@ -1,17 +1,24 @@
-[tool.poetry]
+[project]
 name = "fastapi-starter-template"
 version = "0.1.0"
-description = ""
-authors = ["payne-wu <wuzhipeng1289690157@gmail.com>"]
+description = "Add your description here"
 readme = "README.md"
-packages = [{include = "fastapi_starter_template", from = "src"}]
+requires-python = ">=3.8"
+dependencies = [
+    "environs>=11.2.1",
+    "fastapi[all]>=0.115.12",
+    "loguru>=0.7.3",
+]
 
-[tool.poetry.dependencies]
-python = "^3.12"
-fastapi = {extras = ["all"], version = "^0.111.0"}
-gunicorn = "^22.0.0"
+[tool.ruff]
+line-length = 100                       # https://beta.ruff.rs/docs/settings/
+indent-width = 4
+unsafe-fixes = true
+respect-gitignore = true                # Exclude a variety of commonly ignored directories.
 
+# format
+format.docstring-code-format = true
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+# lint
+lint.select = ["E", "W", "F"]           # https://beta.ruff.rs/docs/rules/
+lint.ignore = ["F401"]
