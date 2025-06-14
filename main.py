@@ -4,7 +4,7 @@
 # @File    : main.py
 # @Author  : PayneWu
 # @Email   : paynewu0719@gmail.com
-# @Github  : https://github.com/azwpayne 
+# @Github  : https://github.com/azwpayne
 # @Time    : 2024/7/5 上午11:13
 
 
@@ -17,21 +17,21 @@ from src.app.utils import app
 app.include_router(api_router)
 
 
-@app.get("/")
+@app.get('/')
 async def root():
-    logger.info("Hello World")
-    return {"message": "Hello World"}
+    logger.info('Hello World')
+    return {'message': 'Hello World'}
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     import uvicorn
 
     uvicorn.run(
-        "main:app",
-        host="0.0.0.0",
+        'main:app',
+        host='0.0.0.0',
         port=8001,
         reload=False,
         workers=WORKER_COUNT,
-        log_config=None,  # 禁用Uvicorn默认日志，仅用Loguru
-        access_log=False,  # 禁用访问日志（使用自定义日志）
+        # log_config=None,  # 禁用Uvicorn默认日志，仅用Loguru
+        # access_log=False,  # 禁用访问日志（使用自定义日志）
     )

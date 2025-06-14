@@ -10,9 +10,9 @@ router = APIRouter()
 
 def add_router(router_folder, router_name):
     try:
-        lib = importlib.import_module(f"src.app.collectors.{router_folder}.{module_name}")
+        lib = importlib.import_module(f'src.app.collectors.{router_folder}.{module_name}')
         sub_router = getattr(lib, 'router')
-        router.include_router(sub_router, prefix=f"/{router_folder}/{router_name}")
+        router.include_router(sub_router, prefix=f'/{router_folder}/{router_name}')
     except AttributeError:
         pass
 

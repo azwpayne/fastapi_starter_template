@@ -5,6 +5,4 @@ router = APIRouter()
 
 @router.get('/')
 def hello():
-    return {
-        'message': 'Hello World!'
-    }
+    return {'message': 'Hello World!'}
