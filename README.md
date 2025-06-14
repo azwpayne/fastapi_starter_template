@@ -1,7 +1,8 @@
 # fastapi_starter_template
 
-### Usage
+## Usage
 
+### Start the program with uvicorn
 ```shell
 uvicorn main:app \
   --host 0.0.0.0 \
