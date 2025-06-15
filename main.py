@@ -16,13 +16,6 @@ from src.app.utils import app
 
 app.include_router(api_router)
 
-
-@app.get('/')
-async def root():
-    logger.info('Hello World')
-    return {'message': 'Hello World'}
-
-
 if __name__ == '__main__':
     import uvicorn
 
